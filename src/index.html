@@ -24,8 +24,9 @@
       <h1>Películas</h1>
       <!--<p>Total #</p> -->
       <section id="barra-cyr">
-        <div class="contador">Total XX</div>
-        <div class="resultado">Resultado Isao Takahata</div>
+        <div class="contador">Total <div id="cuenta"></div></div>
+
+        <div class="resultado">Resultado <div id="nombre"></div> </div>
       </section>
       <!-- Tarjetas -->
       <section id="tarjetas"></section>
@@ -43,11 +44,11 @@
       <div id="botones">
         <div id="boton-m">
           <button id="btn-m">
-            <ul id="lista"> 
+            <ul id="menu-principal"> 
               <li id="todas">Todas</li>
 
               <li id="uno">Directores
-                <ul>
+                <ul id= "directores">
                   <li id="Hayao Miyazaki">Hayao Miyazaki</li>
                   <li id="Isao Takahata">Isao Takahata</li>
                   <li id="Yoshifumi Kondō">Yoshifumi Kondō</li>
@@ -59,8 +60,8 @@
              
               <li id="dos">Lanzamiento
                 <ul>
-                  <li>Más reciente</li>
-                  <li>Más antigua</li>
+                  <li value="0">Más reciente</li>
+                  <li value="1">Más antigua</li>
                   <!--<li>1986</li>
                   <li>1988</li>
                   <li>1989</li>
