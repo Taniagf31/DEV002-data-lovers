@@ -2,12 +2,12 @@ import { example } from './data.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
-//import { filterAZ, filterZA, filterDataYearAsc, filterDataYearDesc, filterDataDirector, filterDataProducer, compute } from './data.js';
-import { filterBy, filterDateAsc, filterDateDesc } from './data.js';
+import { filterBy,filterDateAsc, filterDateDesc, compute } from './data.js';
 
 console.log(example, data);
 console.log(filterDateAsc, data);
 console.log(filterDateDesc, data);
+console.log(compute, data);
 const tarjetas = document.getElementById("tarjetas");
 data.films.forEach(element => {
   const tarjeta = `
@@ -57,21 +57,33 @@ document.getElementById("directores").addEventListener("click",function(event) {
             <p id= "titulo"> ${element.title}</p>
             <p id= "datos"> Director: ${element.director} <br> Productor: ${element.producer} <br> Lanzamiento: ${element.release_date} <br> Score: ${element.rt_score}</p>
           </section>
-    </div>
-    `
+    </div> `
     tarjetas.innerHTML += tarjeta});
     let menu = document.getElementById("menu-principal");
     menu.style.display = "none"; //si quiero seleccionar otra cosa ya no me deja
 });
 
+const dataClone = {};
+Object.assign (dataClone, data);
+console.log(data)
+console.log(dataClone)
 
+//Botón Lanzamiento
+// filterDate.addEventListener('change', () => {
+//   if (filterDate.value === '0') {
+//       const filterDate = filterDateAsc(dataClone)
+//       tarjetas(filterDate)
+//   }
+//  if (filterDate.value === '1') {
+//       const filterDate = filterDateDesc(dataClone)
+//       tarjetas(filterDateDesc)
+//   }
+// }) 
 
-
-
-
-
-
-
+document.getElementById("asc").addEventListener("click",function(event) {
+ const filterDateAsc = filterBy(event.target.id, data); 
+ console.log(filterDateAsc)
+})
 
 
 
